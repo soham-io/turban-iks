@@ -1,0 +1,6 @@
+{
+  "name": "PAGDI — The Turban Museum of India",
+  "description": "A digital cultural museum celebrating the heritage, identity, regional diversity, craftsmanship, and living traditions of Indian turbans.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
