@@ -1,23 +1,14 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { museumRouter } from './server/routes/museumRoutes.js';
+import { createMuseumApp } from './server/app.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function startServer() {
-  const app = express();
+  const app = createMuseumApp();
   const PORT = Number(process.env.PORT) || 3000;
-
-  app.use(express.json());
-
-  // API Routes
-  app.use('/api', museumRouter);
-
-  app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok', museum: 'PAGDI — The Turban Museum of India' });
-  });
 
   if (process.env.NODE_ENV !== 'production') {
     const { createServer: createViteServer } = await import('vite');
