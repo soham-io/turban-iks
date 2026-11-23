@@ -61,9 +61,10 @@ export function TurbanCard({ turban }: TurbanCardProps) {
 
           <Link
             to={`/turbans/${turban.id}`}
+            aria-label={`Explore Artifact: ${turban.name}`}
             className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-[#641F2B] hover:text-[#B75E40] whitespace-nowrap shrink-0 transition-colors"
           >
-            Inspect Artifact
+            Explore Artifact
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
