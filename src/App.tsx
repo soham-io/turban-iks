@@ -13,6 +13,8 @@ import { OccasionsPage } from './pages/OccasionsPage';
 import { MapPage } from './pages/MapPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { FilmPage } from './pages/FilmPage';
+import { AboutAuthorPage } from './pages/AboutAuthorPage';
+import { BackToTopButton } from './components/BackToTopButton';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,9 +46,11 @@ function MuseumShell() {
           <Route path="/map" element={<MapPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/film" element={<FilmPage />} />
+          <Route path="/about-author" element={<AboutAuthorPage />} />
         </Routes>
       </main>
       {!isTryOn && <Footer />}
+      <BackToTopButton />
     </div>
   );
 }

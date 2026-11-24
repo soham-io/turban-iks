@@ -77,6 +77,11 @@ export function Footer() {
                   Short Film: A Legacy Woven in Cloth
                 </Link>
               </li>
+              <li>
+                <Link to="/about-author" className="hover:text-[#F6F1E7] transition-colors">
+                  About Author
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
