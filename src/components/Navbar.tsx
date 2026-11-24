@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'Stories', to: '/stories' },
   { label: 'The Film', to: '/film' },
   { label: 'Craft', to: '/craft' },
+  { label: 'About Author', to: '/about-author' },
 ];
 
 export function Navbar() {
@@ -48,10 +49,10 @@ export function Navbar() {
           PAGDI
         </Link>
 
-        {/* Zone 2: 5 concise single-line nav links */}
+        {/* Zone 2: 6 concise single-line nav links */}
         <nav
           aria-label="Primary Museum Navigation"
-          className="hidden md:flex items-center gap-7 text-sm font-medium"
+          className="hidden lg:flex items-center gap-7 text-sm font-medium"
         >
           {NAV_LINKS.map((item) => {
             const active =
@@ -101,7 +102,7 @@ export function Navbar() {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
-            className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2"
+            className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -110,7 +111,7 @@ export function Navbar() {
 
       {/* Minimal mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#F6F1E7] text-[#1B1B1B] border-t border-[#1B1B1B]/12 px-6 py-6 space-y-4">
+        <div className="lg:hidden bg-[#F6F1E7] text-[#1B1B1B] border-t border-[#1B1B1B]/12 px-6 py-6 space-y-4">
           <nav className="flex flex-col space-y-1">
             <Link
               to="/"
