@@ -31,6 +31,9 @@ export function Navbar() {
   }, [location.pathname]);
 
   const overHero = isHome && !scrolled && !mobileOpen;
+  const visibleNavLinks = isHome
+    ? NAV_LINKS.filter((item) => item.to !== '/about-author')
+    : NAV_LINKS;
 
   return (
     <header
@@ -54,7 +57,7 @@ export function Navbar() {
           aria-label="Primary Museum Navigation"
           className="hidden lg:flex items-center gap-7 text-sm font-medium"
         >
-          {NAV_LINKS.map((item) => {
+          {visibleNavLinks.map((item) => {
             const active =
               location.pathname === item.to ||
               (item.to !== '/' && location.pathname.startsWith(item.to));
@@ -119,7 +122,7 @@ export function Navbar() {
             >
               Home
             </Link>
-            {NAV_LINKS.map((item) => (
+            {visibleNavLinks.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}

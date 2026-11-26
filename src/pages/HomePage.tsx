@@ -7,7 +7,6 @@ import type { Turban } from '../types/museum';
 import { MuseumImage } from '../components/MuseumImage';
 import { IndiaCulturalMap } from '../components/IndiaCulturalMap';
 import { OccasionFinderSection } from '../components/OccasionFinderSection';
-import { ShortFilmPlayer } from '../components/ShortFilmPlayer';
 
 export function HomePage() {
   const [featured, setFeatured] = useState<Turban | null>(null);
@@ -263,36 +262,7 @@ export function HomePage() {
         <OccasionFinderSection />
       </section>
 
-      {/* 5. SHORT FILM — CINEMATIC EXPERIENCE */}
-      <section className="bg-[#1B1B1B] text-[#F6F1E7] py-20 lg:py-24 border-t border-[#DCC9A6]/15">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 space-y-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="max-w-2xl space-y-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-[#DCC9A6] font-semibold">
-                Museum Cinema Exhibition
-              </p>
-              <h2 className="font-editorial text-3xl sm:text-4xl text-[#F6F1E7]">
-                A legacy woven in cloth.
-              </h2>
-              <p className="text-base text-[#F6F1E7]/75 leading-relaxed">
-                Experience the interactive documentary storyboard tracing how an uncut length of
-                cotton or silk carries memory across generations.
-              </p>
-            </div>
-            <Link
-              to="/film"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#DCC9A6] hover:text-[#F6F1E7] whitespace-nowrap shrink-0"
-            >
-              Read Full Narrative Script
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <ShortFilmPlayer />
-        </div>
-      </section>
-
-      {/* 6. CLOSING INVITATION TO TRY-ON STUDIO */}
+      {/* 5. CLOSING INVITATION TO TRY-ON STUDIO */}
       <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-24">
         <div className="bg-[#EBE3D3]/60 border border-[#1B1B1B]/12 p-8 sm:p-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8 space-y-4">
