@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const VIDEO_SOURCE = '/videos/documentary.mp4';
+const VIDEO_SOURCE = '/videos/documentary.mov';
 
 type VideoStatus = 'checking' | 'ready' | 'missing' | 'lfs-pointer' | 'invalid' | 'error';
 
@@ -46,11 +46,11 @@ export function ShortFilmPlayer() {
           return;
         }
 
-        const isMp4 =
-          contentType.startsWith('video/mp4') &&
+        const isPlayableVideo =
+          (contentType.startsWith('video/mp4') || contentType.startsWith('video/quicktime')) &&
           value.length >= 8 &&
           new TextDecoder().decode(value.subarray(4, 8)) === 'ftyp';
-        setVideoStatus(isMp4 ? 'ready' : 'invalid');
+        setVideoStatus(isPlayableVideo ? 'ready' : 'invalid');
       } catch {
         if (active && !controller.signal.aborted) {
           setVideoStatus('error');
@@ -70,15 +70,15 @@ export function ShortFilmPlayer() {
     videoStatus === 'checking'
       ? 'Checking for the documentary video…'
       : videoStatus === 'missing'
-        ? 'Documentary video not found. Add your file at public/videos/documentary.mp4, then refresh this page.'
+        ? 'Documentary video not found. Add your file at public/videos/documentary.mov, then refresh this page.'
         : videoStatus === 'lfs-pointer'
           ? 'Vercel is serving a Git LFS pointer instead of the video. Enable Git LFS in the Vercel project settings, then redeploy.'
           : videoStatus === 'invalid'
-            ? 'The video path returned content that is not a valid MP4 file. Check that the deployed file is the actual video, not a Git LFS pointer.'
+            ? 'The video path returned content that is not a valid MOV or MP4 file. Check that the deployed file is the actual video.'
             : 'The documentary video could not be loaded. Check the video file and network connection, then refresh this page.';
 
   const playbackErrorMessage = playbackFailed
-    ? 'The browser could not play this video. Check that it is encoded as MP4 with H.264 video and AAC audio.'
+    ? 'The browser could not play this video. Check that it uses a browser-supported codec, such as H.264 video and AAC audio.'
     : message;
 
   return (
