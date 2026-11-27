@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: 'Stories', to: '/stories' },
   { label: 'The Film', to: '/film' },
   { label: 'Craft', to: '/craft' },
-  { label: 'About Author', to: '/about-author' },
 ];
 
 export function Navbar() {
@@ -31,9 +30,6 @@ export function Navbar() {
   }, [location.pathname]);
 
   const overHero = isHome && !scrolled && !mobileOpen;
-  const visibleNavLinks = isHome
-    ? NAV_LINKS.filter((item) => item.to !== '/about-author')
-    : NAV_LINKS;
 
   return (
     <header
@@ -57,7 +53,7 @@ export function Navbar() {
           aria-label="Primary Museum Navigation"
           className="hidden lg:flex items-center gap-7 text-sm font-medium"
         >
-          {visibleNavLinks.map((item) => {
+          {NAV_LINKS.map((item) => {
             const active =
               location.pathname === item.to ||
               (item.to !== '/' && location.pathname.startsWith(item.to));
@@ -122,7 +118,7 @@ export function Navbar() {
             >
               Home
             </Link>
-            {visibleNavLinks.map((item) => (
+            {NAV_LINKS.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}

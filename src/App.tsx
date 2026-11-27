@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -13,7 +13,6 @@ import { OccasionsPage } from './pages/OccasionsPage';
 import { MapPage } from './pages/MapPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { FilmPage } from './pages/FilmPage';
-import { AboutAuthorPage } from './pages/AboutAuthorPage';
 import { BackToTopButton } from './components/BackToTopButton';
 
 function ScrollToTop() {
@@ -46,7 +45,7 @@ function MuseumShell() {
           <Route path="/map" element={<MapPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/film" element={<FilmPage />} />
-          <Route path="/about-author" element={<AboutAuthorPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       {!isTryOn && <Footer />}

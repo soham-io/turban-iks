@@ -79,7 +79,6 @@ export interface HeritageStory {
   subtitle: string;
   category: string;
   readTime: string;
-  author: string;
   publishedDate: string;
   heroImage: string;
   excerpt: string;

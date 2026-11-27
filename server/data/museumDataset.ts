@@ -1366,7 +1366,6 @@ export const HERITAGE_STORIES: HeritageStory[] = [
     subtitle: 'How geography, climate, and community turned a single rectangle of cloth into hundreds of distinct silhouettes.',
     category: 'Regional Anthropology',
     readTime: '5 min read',
-    author: 'Curatorial Research Desk',
     publishedDate: 'Autumn Archive',
     heroImage: '/src/assets/images/museum_textile_archive_1795273980409.jpg',
     excerpt:
@@ -1407,7 +1406,6 @@ export const HERITAGE_STORIES: HeritageStory[] = [
     subtitle: 'Decoding why colours shift with seasons, harvests, and life’s milestones.',
     category: 'Colour & Symbolism',
     readTime: '4 min read',
-    author: 'Textile Curatorial Archive',
     publishedDate: 'Autumn Archive',
     heroImage: '/src/assets/images/hero_turban_portrait_1795273975279.jpg',
     excerpt:
@@ -1447,7 +1445,6 @@ export const HERITAGE_STORIES: HeritageStory[] = [
     subtitle: 'Why the turban in India means responsibility before it ever means ornament.',
     category: 'Identity & Ethics',
     readTime: '6 min read',
-    author: 'PAGDI Editorial Archive',
     publishedDate: 'Autumn Archive',
     heroImage: '/src/assets/images/turban_punjabi_dastar_1795273980615.jpg',
     excerpt:
@@ -1477,7 +1474,6 @@ export const HERITAGE_STORIES: HeritageStory[] = [
     subtitle: 'Meet the weavers, Bandhani tiers, and master pagdi-bandhas keeping a tactile knowledge alive.',
     category: 'Craftsmanship',
     readTime: '5 min read',
-    author: 'Craft Field Notes',
     publishedDate: 'Autumn Archive',
     heroImage: '/src/assets/images/craft_tying_hands_1795273981267.jpg',
     excerpt:
